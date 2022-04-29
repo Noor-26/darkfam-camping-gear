@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Banner.css';
 import campPng from './camping.png'
 const Banner = () => {
@@ -10,7 +11,7 @@ const Banner = () => {
             <div className="text-container text-white ">
             
                 <h1 className="banner-text " >Equip all your Camping items here</h1>
-                <button className="btn banner-btn px-5 py-3">See items</button>
+              <Link to='/home'><button className="btn banner-btn px-3 py-2 px-md-5 py-md-3">See items</button></Link>
                
             </div>
         </div>
