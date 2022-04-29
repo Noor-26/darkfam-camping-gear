@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiMenuAlt3 } from 'react-icons/hi';
-import { FaArchive,FaDropbox,FaTruck,FaGlobeAmericas,FaWarehouse } from 'react-icons/fa';
-import { ImRoad} from 'react-icons/im';
 
 import './Navber.css'
 const Navber = () => {
@@ -13,7 +11,7 @@ const Navber = () => {
     <a className="navbar-brand" as={Link} to='/'>Navbar</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
 
-      <span className=""><FaWarehouse className="navber-icon"/></span> 
+      <span className=""><HiMenuAlt3 className="navber-icon"/></span> 
       
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
