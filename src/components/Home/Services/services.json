@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"PACKAGING AND STORAGE",
+        "description":"We can package and store your things.",
+        "icon":""
+    },
+    {
+        "id":2,
+        "name":"CARGO",
+        "description":"Let us transport your things from point A to point B fast and securely",
+        "icon":""
+    },
+    {
+        "id":3,
+        "name":"WORLDWIDE TRANSPORT",
+        "description":"We can transport your things anywhere in the world.",
+        "icon":""
+    },
+    {
+        "id":4,
+        "name":"GROUND TRANSPORT",
+        "description":"Transport your things with our super moving vans.",
+        "icon":""
+    },
+    {
+        "id":5,
+        "name":"WAREHOUSING",
+        "description":"We have top notch security and loads of space. Store your stuff at our warehouse.",
+        "icon":""
+    },
+    {
+        "id":6,
+        "name":"DOOR-TO-DOOR DELIVERY",
+        "description":" Do you need something delivered? We are what you are looking for!",
+        "icon":""
+    }
+]
