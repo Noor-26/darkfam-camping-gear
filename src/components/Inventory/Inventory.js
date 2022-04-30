@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import './Inventory.css'
 const Inventory = () => {
     const {id} = useParams()
@@ -107,8 +107,9 @@ const Inventory = () => {
             </div>
         </div>
 
-
-
+        </div>
+        <div  className="text-center">
+            <Link to="/manageInventory" className="btn my-4 inventory-btn">Manage Inventory</Link>
         </div>
         </div>
     );
