@@ -1,18 +1,55 @@
 import React from 'react';
+import tent from '../../../images/tent.jpg'
+import backpack from '../../../images/backpack.jpg'
+import sleepingBag from '../../../images/sleepingBag.jpg'
+import './Catagory.css'
 
 const Catagory = () => {
     return (
-        <div>
+        <div className="my-5">
             <h2>Top catagory</h2>
-            <div  className="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-3">
-            <div>
-                <div className="">
-                    <img src="" alt="" />
-                    </div>
-                <div className="">
+            <div  className=" catagory-container container  mt-3">
 
+            <div>
+
+                
+                <div className="catagory-img-container">
+                    <img src={tent} className="img-fluid catagory-img" alt="" />
+                    </div>
+                <div className="catagory-text">
+                    <h5>Camping tent</h5>
+                    <p>best camping tent for you</p>
                 </div>
+
+
             </div>
+            <div>
+
+                
+                <div className="catagory-img-container">
+                    <img src={backpack} className="img-fluid catagory-img" alt="" />
+                    </div>
+                <div className="catagory-text">
+                    <h5>Camping tent</h5>
+                    <p>best camping tent for you</p>
+                </div>
+
+
+            </div>
+            <div>
+
+                
+                <div className="catagory-img-container">
+                    <img src={sleepingBag} className="img-fluid catagory-img" alt="" />
+                    </div>
+                <div className="catagory-text">
+                    <h5>Camping tent</h5>
+                    <p>best camping tent for you</p>
+                </div>
+
+
+            </div>
+
 
             </div>
         </div>
