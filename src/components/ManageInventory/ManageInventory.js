@@ -10,9 +10,8 @@ const ManageInventory = () => {
       .then(res => res.json())
       .then(data => setItems(data))
     },[])
-    
+
     const deleteUser = (id) => {
-        // console.log(id)
         const url = `http://localhost:5000/product/${id}`
                 fetch(url,{
                     method:'DELETE'

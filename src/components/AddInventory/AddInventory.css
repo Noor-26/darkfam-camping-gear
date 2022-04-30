@@ -1,0 +1,8 @@
+.add-container{
+    display: flex;
+    flex-direction: column;
+}
+.add-btn{
+    background-color:crimson;
+    color: white;
+}

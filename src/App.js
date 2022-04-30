@@ -5,6 +5,7 @@ import Home from './components/Home/Home/Home';
 import Navber from './components/Shared/Navber/Navber';
 import Inventory from './components/Inventory/Inventory';
 import ManageInventory from './components/ManageInventory/ManageInventory';
+import AddInventory from './components/AddInventory/AddInventory';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
      <Route path='/home' element={<Home/>}/>
      <Route path='/inventory/:id' element={<Inventory/>}/>
      <Route path='/manageInventory' element={<ManageInventory/>}/>
+     <Route path='/addInventory' element={<AddInventory/>}/>
    </Routes>
    
     </div>
