@@ -7,10 +7,10 @@ import Catagory from '../Catagory/Catagory';
 const Home = () => {
     return (
         <div>
-            {/* <Banner/>
-            <Items/> */}
-            <Services/>           
-            <Catagory/>                         
+            <Banner/>
+            <Items/>
+            {/* <Services/>           
+            <Catagory/>*/}
         </div>
     );
 };
