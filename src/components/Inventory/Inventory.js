@@ -4,7 +4,7 @@ import './Inventory.css'
 const Inventory = () => {
     const {id} = useParams()
     const [item, setItems] = useState({})
-    const {name,img,description,price,supplierName,_id,quantity}= item
+    const {name,img,description,price,supplierName}= item
     const [productQuantity, setQuantity] = useState(0)
 
       const reduceQuantity =() =>{
@@ -16,24 +16,47 @@ const Inventory = () => {
             method:"PUT",
             headers:{
                 'content-type' : 'application/json',
-                newQuantitys : productQuantity - 1
+                quantitys : productQuantity - 1
 
             },
            
         })
         .then(res => res.json())
         .then(data =>{
-            alert('user sent')
+            
         console.log('success',data)
             
     })
   
 }
-      
-       
+      const increaseQuantity =event =>{
+        event.preventDefault()
+        const newQuantity = event.target.increase.value
 
-       
-        
+        const increse = parseInt(productQuantity) + parseInt(newQuantity) 
+
+          setQuantity(increse)
+          
+          // update quantity
+    
+          fetch(`http://localhost:5000/inventory/${id}`,{
+            method:"PUT",
+            headers:{
+                'content-type' : 'application/json',
+                quantitys : increse
+
+            },
+           
+        })
+        .then(res => res.json())
+        .then(data =>{
+           
+        console.log('success',data)
+            
+    })
+    event.target.reset()
+  
+}
       
       
     
@@ -69,9 +92,18 @@ const Inventory = () => {
             <p className="card-text">Description : {description}</p>
             <div className=" text-center">
               <button className="inventory-btn btn px-4 py-2" onClick={reduceQuantity}>Delivered</button>
+              
             </div>
+            <form onSubmit={increaseQuantity}>
+              <h2 className="mt-4">Restock the items</h2>
+              <div className="text-center">
+              <input type="text" name='increase' className="py-1"/>
+                <input type="submit" value="Add"className="inventory-btn btn" />
+              </div>
+            </form>
           </div>
-          
+          <div>
+          </div>
             </div>
         </div>
 
