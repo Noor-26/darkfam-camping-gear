@@ -13,7 +13,9 @@ const SocialLogin = () => {
 
     useEffect(() => {
         if(error){
-            toast(error)
+            toast.info(error, {
+                style: {backgroundColor:"black",color:"white"},
+            });
         }
     }, [error])
     if(user){

@@ -1,3 +1,6 @@
 .navber-icon{
     font-size: 25px;
 }
+.navber-none{
+    display:"none";
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiMenuAlt3 } from 'react-icons/hi';
-
 import './Navber.css'
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import { useAuthState, } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase';
 const Navber = () => {
   const [user] = useAuthState(auth) 
@@ -19,19 +19,33 @@ const Navber = () => {
       
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      
+     
+      <ul className="navbar-nav ms-auto mb-2 mb-lg-0" >
+
+      <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
          <Link to="/home" className="nav-link active">Home</Link>
-          
         </li>
-      
       </ul>
-      <ul className="navbar-nav ms-auto mb-2 mb-lg-0" >
-        
+
         <li className="nav-item">
           {
-            user ? <button className="btn">Sign out</button> :
-         <Link to="/login" className="nav-link">Login</Link>
+              user ? 
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li className="nav-item">
+         <Link to="/manageInventory" className="nav-link ">Manages items</Link>
+          
+        </li>
+      <li className="nav-item">
+         <Link to="/addInventory" className="nav-link ">Add items</Link>
+      </li>
+      <li className="nav-item">
+         <Link to="/myItems" className="nav-link ">My items</Link>
+      </li>
+        <button className="btn btn-info rounded-pill text-white" onClick={() => signOut(auth)}>Sign out</button>
+        </ul> :
+         <Link to="/login" className="nav-link">Login</Link> 
           }
         </li>
     
