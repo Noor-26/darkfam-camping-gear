@@ -1,0 +1,31 @@
+.form-container{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-field{
+    flex-direction: column;
+    /* border: 2px solid black;  */
+    
+}
+
+.input-field{
+    width: 100%;
+}
+.form-btn{
+    background-color: crimson;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    width: 80%;
+}
+.form-link{
+    text-decoration: none;
+    color: crimson;
+}
+
+.error-text{
+    font-size: 12px;
+}
