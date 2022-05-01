@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {  useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-import auth from '../../../../firebase.init';
-
-
+// import auth from '../../../../firebase.init'
+import '../Form.css'
 const Login = () => {
     const emailRef = useRef()
       const passwordRef = useRef()
@@ -12,7 +11,7 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+      ] = useSignInWithEmailAndPassword();
       
 
       const handleSubmit = event =>{
@@ -21,10 +20,13 @@ const Login = () => {
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
     }
+    const resetPassword = () => {
+
+    }
     return (
-        <div className="mt-5 pt-3 text-center">
+        <div className="mt-5 pt-3 text-center form-container">
+            <form  onSubmit={handleSubmit} className="border p-5">
             <h2>Login here</h2>
-            <form  onSubmit={handleSubmit}>
                 
                 <div className="d-flex form-field">
                    
