@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { HiMenuAlt3 } from 'react-icons/hi';
 
 import './Navber.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase';
 const Navber = () => {
+  const [user] = useAuthState(auth) 
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -22,13 +25,14 @@ const Navber = () => {
           
         </li>
       
-    
-       
       </ul>
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0" >
         
         <li className="nav-item">
+          {
+            user ? <button className="btn">Sign out</button> :
          <Link to="/login" className="nav-link">Login</Link>
+          }
         </li>
     
        

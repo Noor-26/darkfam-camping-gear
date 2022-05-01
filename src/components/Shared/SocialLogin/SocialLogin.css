@@ -1,0 +1,28 @@
+.line{
+    border: 1px solid lightgray;
+    height: 2px;
+    width:50%
+}
+.icon{
+    width: 30px;
+}
+.btn-google{
+    border: 1px solid lightgray;
+}
+.btn-github{
+    background-color: black;
+    color: white;
+}
+
+.git{
+    background-color:white;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}

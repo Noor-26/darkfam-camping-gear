@@ -1,20 +1,28 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {  useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Form.css'
+import Loading from '../../Loading/Loading';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 const Login = () => {
-    const emailRef = useRef()
+      const emailRef = useRef()
       const passwordRef = useRef()
+      const navigate = useNavigate()
+      const location = useLocation()
+
+      let from = location.state?.from?.pathname || '/'
+
       const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
       
 
       const handleSubmit = event =>{
@@ -23,9 +31,37 @@ const Login = () => {
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
     }
-    const resetPassword = () => {
 
+    const resetPassword = async () => {
+        const email = emailRef.current.value
+        if (email) {
+          await sendPasswordResetEmail(email);
+          toast.info("Email sent", {
+            style: {backgroundColor:"black",color:"white"},
+        });
+      }
+      
+      else{
+        toast.info("Enter your email to reset password", {
+            style: {backgroundColor:"black",color:"white"},
+        });
+      }
     }
+
+    useEffect(() => {
+        if(error ){
+          toast(error?.message);
+      }
+    }, [error]) 
+
+    if(loading || sending){
+        return <Loading/>
+    }
+
+    if(user){
+        navigate(from,{replace:true})
+      }
+
     return (
         <div className="mt-5 pt-3 text-center form-container">
             <form  onSubmit={handleSubmit} className="border p-5">
@@ -48,6 +84,7 @@ const Login = () => {
                     
                 </div>
             </form>
+            <SocialLogin/>
         </div>
     );
 };
