@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {  useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-// import auth from '../../../../firebase.init'
+import auth from '../../../firebase'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../Form.css'
 const Login = () => {
     const emailRef = useRef()
@@ -11,7 +14,7 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword();
+      ] = useSignInWithEmailAndPassword(auth);
       
 
       const handleSubmit = event =>{

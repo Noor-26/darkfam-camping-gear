@@ -1,22 +1,21 @@
 // Import the functions you need from the SDKs you need
+import {getAuth} from "firebase/auth"
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getAuth} from "firebase/auth"
-require('dotenv').config()
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyDdmraXJ4f63T3iEggI_0NJNXsfvPjCM1U",
   authDomain: "darkfam-camping-gear.firebaseapp.com",
   projectId: "darkfam-camping-gear",
   storageBucket: "darkfam-camping-gear.appspot.com",
-  messagingSenderId: process.env.MASSAGE_SEND_ID,
-  appId: process.env.APP_ID,
-  measurementId: process.env.MESURMENT_ID
+  messagingSenderId: "713519707051",
+  appId: "1:713519707051:web:b37adb1934b0f52fb0d8ee",
+  measurementId: "G-352RNSQ5WR"
 };
 
 // Initialize Firebase
