@@ -13,13 +13,6 @@
     background-color: black;
     color: white;
 }
-
-.git{
-    background-color:white;
-    border: 1px solid black;
-    border-radius: 50%;
-}
-
 .buttons{
     display: flex;
     flex-direction: column;

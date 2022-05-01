@@ -63,7 +63,7 @@ const Login = () => {
       }
 
     return (
-        <div className="mt-5 pt-3 text-center form-container">
+        <div className="mt-5 pt-3 form-container">
             <form  onSubmit={handleSubmit} className="border p-5">
             <h2>Login here</h2>
                 
@@ -83,8 +83,8 @@ const Login = () => {
                     <p>Forget your password ? <button onClick={resetPassword} className="btn " style={{color:"crimson"}}>Reset Password</button></p>
                     
                 </div>
-            </form>
             <SocialLogin/>
+            </form>
         </div>
     );
 };
