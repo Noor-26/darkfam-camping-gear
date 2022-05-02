@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-const Item = ({item}) => {
+import './Myitem.css'
+const Myitem = ({item,deleteUser}) => {
     const {name,img,description,price,supplierName,_id}= item
-   
+
     return (
         <div className="col">
         <div className="card h-100">
-          <img src={img} className="card-img-top card-img" alt="Product"/>
+          <img src={img} className="card-img-top card-img " alt="Product"/>
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
            
@@ -15,14 +14,12 @@ const Item = ({item}) => {
             <p className="card-text">supplierName : {supplierName}</p>
             <p className="card-text">{description}</p>
           </div>
-          <div className=" text-center w-100">
-            <Link to={`/inventory/${_id}`}>
-            <button className="my-3 btn btn-info" >Update stock</button>
-            </Link>
+          <div className=" text-center ">
+            <button className="btn btn-def mb-3 " onClick={() =>deleteUser(_id)}> Delete </button>
           </div>
         </div>
       </div>
     );
 };
 
-export default Item;
+export default Myitem;

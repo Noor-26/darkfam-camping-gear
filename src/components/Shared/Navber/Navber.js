@@ -5,6 +5,8 @@ import './Navber.css'
 import { signOut } from 'firebase/auth';
 import { useAuthState, } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase';
+
+
 const Navber = () => {
   const [user] = useAuthState(auth) 
     return (

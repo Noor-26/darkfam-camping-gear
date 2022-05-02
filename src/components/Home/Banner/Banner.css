@@ -24,11 +24,7 @@
     width: 80%;
     font-size: 75px;
 }
-.banner-btn{
-    background-color:crimson;
-    color:white;
-    transition: 0.5s;
-}
+
 .banner-btn:hover{
     background-color:white;
     color:crimson;

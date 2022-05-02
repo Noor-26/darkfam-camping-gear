@@ -12,6 +12,10 @@ const ManageInventory = () => {
     },[])
 
     const deleteUser = (id) => {
+        const deleteIt = window.confirm("do you want to delete the item?")
+
+        if(deleteIt){ 
+
         const url = `http://localhost:5000/product/${id}`
                 fetch(url,{
                     method:'DELETE'
@@ -23,7 +27,7 @@ const ManageInventory = () => {
                       setItems(remaining)
                    }
                 })
-            
+        }
     }
     return (
         <div>

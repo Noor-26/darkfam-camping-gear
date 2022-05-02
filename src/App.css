@@ -9,7 +9,17 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+/* default style for buttons */
+.btn-def{
+  background-color:crimson;
+  color:white;
+  transition: 0.5s;
+}
+.btn-def:hover{
+  background-color: white;
+  color: crimson;
+  border: 1px solid crimson;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

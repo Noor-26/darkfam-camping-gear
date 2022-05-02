@@ -1,18 +1,27 @@
 import React from 'react';
+import { useAuthState} from 'react-firebase-hooks/auth';
+import auth from '../../firebase';
+import Loading from '../Loading/Loading';
 import './AddInventory.css';
 
 const AddInventory = () => {
+    const [user,loading] = useAuthState(auth)
+
+    if(loading){
+   return <Loading/>
+    } 
     const addInventory = event =>{
         event.preventDefault()
 
         const name = event.target.name.value;
+        const email = event.target.email.value;
         const price = event.target.price.value;
         const description = event.target.description.value;
         const img = event.target.img.value;
         const quantity = event.target.quantity.value;
         const supplierName = event.target.supplierName.value;
           
-        const item = {name,price,description,img,quantity,supplierName} 
+        const item = {name,email,price,description,img,quantity,supplierName} 
         
         fetch('http://localhost:5000/product',{
         method:"POST",
@@ -35,6 +44,9 @@ const AddInventory = () => {
                 <div className="add-container container w-50">
                 <label htmlFor="name">Item Name</label>
                 <input  type="text" name="name" id="name" className="py-1 mb-2" required/>
+
+                <label htmlFor="email">Email</label>
+                <input  type="email" name="email" id="email" className="py-1 mb-2" required readOnly value={user.email}/>
 
 
                 <label htmlFor="quantity">Quantity</label>
