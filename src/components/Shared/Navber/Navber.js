@@ -12,8 +12,8 @@ const Navber = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div className="container">
-  <Link to="/" className="navbar-brand">Darkfam-camping-gear</Link>
+  <div className="container ">
+  <Link to="/" className="navbar-brand head-text">Darkfam-camping-gear</Link>
   
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
 
@@ -29,14 +29,17 @@ const Navber = () => {
         <li className="nav-item">
          <Link to="/home" className="nav-link active">Home</Link>
         </li>
+        <li className="nav-item">
+         <Link to="/blog" className="nav-link ">Blogs</Link>
+        </li>
       </ul>
 
-        <li className="nav-item">
+        <li className="nav-item nav-container">
           {
               user ? 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
       <li className="nav-item">
-         <Link to="/manageInventory" className="nav-link ">Manages items</Link>
+         <Link to="/manageInventory" className="nav-link ">Manage items</Link>
           
         </li>
       <li className="nav-item">
@@ -45,7 +48,7 @@ const Navber = () => {
       <li className="nav-item">
          <Link to="/myItems" className="nav-link ">My items</Link>
       </li>
-        <button className="btn btn-info rounded-pill text-white" onClick={() => signOut(auth)}>Sign out</button>
+        <button className="btn btn-def  rounded-pill " onClick={() => signOut(auth)}>Sign out</button>
         </ul> :
          <Link to="/login" className="nav-link">Login</Link> 
           }

@@ -13,11 +13,11 @@ const Item = ({item}) => {
            
             <p className="card-text">price : ${price}</p>
             <p className="card-text">supplierName : {supplierName}</p>
-            <p className="card-text">{description}</p>
+            <p className="card-text">{description.slice(0,150)}...</p>
           </div>
           <div className=" text-center w-100">
             <Link to={`/inventory/${_id}`}>
-            <button className="my-3 btn btn-info" >Update stock</button>
+            <button className="my-3 btn btn-def" >Update stock</button>
             </Link>
           </div>
         </div>

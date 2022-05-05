@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {  useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase'
+import axios from 'axios'
 
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Form.css'
 import Loading from '../../Loading/Loading';
@@ -25,11 +26,14 @@ const Login = () => {
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
       
 
-      const handleSubmit = event =>{
-        event.preventDefault()
+      const  handleSubmit = async event =>{
+        await  event.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
+       fetch(' https://hidden-eyrie-13995.herokuapp.com/login').then(res => res.json())
+       .then(data =>  console.log(data))
+      
     }
 
     const resetPassword = async () => {
@@ -50,7 +54,9 @@ const Login = () => {
 
     useEffect(() => {
         if(error ){
-          toast(error?.message);
+          toast.info(error?.message, {
+            style: {backgroundColor:"black",color:"white"},
+        });
       }
     }, [error]) 
 

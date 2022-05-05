@@ -1,0 +1,14 @@
+.footer-icon{
+    font-size:20px;
+    position: relative;
+    bottom: 10px;
+    color: black;
+}
+.footer-icon:hover{
+    color: crimson;
+}
+.footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

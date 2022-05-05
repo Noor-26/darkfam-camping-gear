@@ -6,7 +6,7 @@ const ManageInventory = () => {
     const [Items, setItems] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product`)
+        fetch(`https://hidden-eyrie-13995.herokuapp.com/product`)
       .then(res => res.json())
       .then(data => setItems(data))
     },[])
@@ -16,7 +16,7 @@ const ManageInventory = () => {
 
         if(deleteIt){ 
 
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://hidden-eyrie-13995.herokuapp.com/product/${id}`
                 fetch(url,{
                     method:'DELETE'
                 })
@@ -48,10 +48,10 @@ const ManageInventory = () => {
                 </tbody>
             </table>
 
-            <div>
-                <Link to='/addInventory'>
+            <div className="text-center">
+                <Link to='/addInventory' >
 
-                <button>Add new item</button>
+                <button className="btn btn-def mt-4">Add new item</button>
                 </Link>
             </div>
         </div>

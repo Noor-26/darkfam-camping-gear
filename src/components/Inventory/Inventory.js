@@ -12,7 +12,7 @@ const Inventory = () => {
           
           // update quantity
     
-          fetch(`http://localhost:5000/inventory/${id}`,{
+          fetch(`https://hidden-eyrie-13995.herokuapp.com/inventory/${id}`,{
             method:"PUT",
             headers:{
                 'content-type' : 'application/json',
@@ -39,7 +39,7 @@ const Inventory = () => {
           
           // update quantity
     
-          fetch(`http://localhost:5000/inventory/${id}`,{
+          fetch(`https://hidden-eyrie-13995.herokuapp.com/inventory/${id}`,{
             method:"PUT",
             headers:{
                 'content-type' : 'application/json',
@@ -61,7 +61,7 @@ const Inventory = () => {
       
     
     useEffect(() => {
-      fetch(`http://localhost:5000/inventory/${id}`)
+      fetch(`https://hidden-eyrie-13995.herokuapp.com/inventory/${id}`)
       .then(res => res.json())
       .then(data => {
           setQuantity(data.quantity )

@@ -4,3 +4,10 @@
 .navber-none{
     display:"none";
 }
+.head-text{
+    font-family: 'Satisfy', cursive;
+    font-weight: 700;
+}
+.nav-container{
+    transition: 0.8s linear;
+}

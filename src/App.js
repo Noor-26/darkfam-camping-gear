@@ -10,8 +10,17 @@ import Login from './components/Login/Login/Login';
 import Ragister from './components/Login/Register/Ragister';
 import { ToastContainer } from 'react-toastify';
 import Myitems from './components/MyItems/Myitems';
+import RequireAuth from './components/Shared/RequireAuth/RequireAuth';
+import Blogs from './components/Blogs/Blogs';
+import AOS from "aos";
+import { useEffect } from 'react'
+import "aos/dist/aos.css";
+import Footer from './components/Shared/Footer/Footer';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+      },[])
   return (
     <div className="App">
       <Navber/>
@@ -19,13 +28,28 @@ function App() {
      <Route path='/' element={<Home/>}/>
      <Route path='/home' element={<Home/>}/>
      <Route path='/inventory/:id' element={<Inventory/>}/>
-     <Route path='/manageInventory' element={<ManageInventory/>}/>
-     <Route path='/addInventory' element={<AddInventory/>}/>
      <Route path='/login' element={<Login/>}/>
      <Route path='/register' element={<Ragister/>}/>
-     <Route path='/myItems' element={<Myitems/>}/>
+     <Route path='/blog' element={<Blogs/>}/>
+     <Route path='/manageInventory' element={
+     <RequireAuth> 
+       <ManageInventory/>
+     </RequireAuth>
+     }/>
+     <Route path='/addInventory' element={
+     <RequireAuth>
+       <AddInventory/>
+     </RequireAuth>
+     }/>
+     <Route path='/myItems' element={
+       <RequireAuth>
+         <Myitems/>
+       </RequireAuth>
+     }/>
    </Routes>
+   <Footer/>
    <ToastContainer/>
+
     </div>
   );
 }

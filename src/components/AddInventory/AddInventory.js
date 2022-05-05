@@ -23,7 +23,7 @@ const AddInventory = () => {
           
         const item = {name,email,price,description,img,quantity,supplierName} 
         
-        fetch('http://localhost:5000/product',{
+        fetch('https://hidden-eyrie-13995.herokuapp.com/product',{
         method:"POST",
         headers:{
             'content-type' : 'application/json'

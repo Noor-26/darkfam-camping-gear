@@ -1,18 +1,17 @@
-import { axios } from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState} from 'react-firebase-hooks/auth';
 import auth from '../../firebase';
 import Loading from '../Loading/Loading';
 import Myitem from './Myitem/Myitem';
 
-const Myitems = () => {
+const Myitems = ({ children }) => {
     const [user,loading] = useAuthState(auth)
     const [items, setitems] = useState([])
 
     useEffect(() => {
     const email = user?.email
     const  run = async  () => {
-        const url = `http://localhost:5000/products?email=${email}`
+        const url = `https://hidden-eyrie-13995.herokuapp.com/products?email=${email}`
         try{
            fetch(url).then(res=>res.json()).then(data => setitems(data))
         }
@@ -25,33 +24,17 @@ run()
 }, [user])
 
 
-// useEffect(() => {
-//     const email = user?.email
-      
-//     const getItems = async () =>{
-        
-//         const url = `http://localhost:5000/products?email=${email}`
-//         console.log(email)
-//         try{
-//             const  {data} = await axios.get(url)
-//                 setitems(data)
-//             }
-//             finally{
-    
-//             }
-//         }
-//         getItems()
-//     },[user])
     if(loading || !items){
         return <Loading/>
     }
 
+    
     const deleteUser = (id) => {
         const deleteIt = window.confirm("do you want to delete the item?")
 
         if(deleteIt){ 
 
-            const url = `http://localhost:5000/product/${id}` 
+            const url = `https://hidden-eyrie-13995.herokuapp.com/product/${id}` 
                     fetch(url,{
                         method:'DELETE'
                     })
