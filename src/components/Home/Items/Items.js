@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 import Item from '../Item/Item';
 const Items = () => {
     const [items, setitems] = useState([])
     useEffect(() => {
       
-    fetch("https://hidden-eyrie-13995.herokuapp.com/product/home") 
-    .then(res => res.json())
-    .then(data => setitems(data))
-     
+        fetch("https://hidden-eyrie-13995.herokuapp.com/product/home") 
+        .then(res => res.json())
+        .then(data => setitems(data))
+        
     }, [])
-    
+    if(items.length === 0 ){
+        return <Loading/>;
+    }
+
     return (
-        <div className="mt-5">
+        <div className="mt-5 h-100">
             <h2 className="ms-5">New inventory items</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-3">
             {

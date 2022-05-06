@@ -1,0 +1,14 @@
+project এর root directory তে .env.local file তৈরী  করতে হবে।
+.gitignore এ .env.local উল্লেখ করে দিতে হবে।
+.env.local লিংকের Screenshot এর মতো করে Configure করে নিতে হবে
+https://prnt.sc/TZpgPaVgAFh4
+firebase.init.js নিচের মতো করে Configure করে নিতে হবে 
+https://prnt.sc/DlhA5B-iVPCl
+Configuration এর কাজ শেষ হলে npm start কমান্ড দিয়ে Server Restart দিয়ে নিবেন।
+
+
+বিস্তারিতভাবে জানার জন্য Module 61-6 এর ভিডিওটি ভালোভাবে দেখুন এবং লিংকের ব্লগটি পড়ুন-
+https://create-react-app.dev/docs/adding-custom-en
+
+step-1 : npm uninsall axios
+step-2 :  npm i axios@0.25.0
