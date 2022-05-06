@@ -1,4 +1,4 @@
-.manage-btn{
-    background-color:crimson;
-    color: white;
+.add-btn{
+position:relative;
+bottom: 1px;
 }

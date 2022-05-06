@@ -91,14 +91,14 @@ const Inventory = () => {
             <p className="card-text">SupplierName : {supplierName}</p>
             <p className="card-text">Description : {description}</p>
             <div className=" text-center">
-              <button className="inventory-btn btn px-4 py-2" onClick={reduceQuantity}>Delivered</button>
+              <button className="btn-def btn px-4 py-2" onClick={reduceQuantity}>Delivered</button>
               
             </div>
             <form onSubmit={increaseQuantity}>
               <h2 className="mt-4">Restock the items</h2>
               <div className="text-center">
               <input type="text" name='increase' className="py-1"/>
-                <input type="submit" value="Add"className="inventory-btn btn" />
+                <input type="submit" value="Add"className="btn-def btn add-btn" />
               </div>
             </form>
           </div>
@@ -109,7 +109,7 @@ const Inventory = () => {
 
         </div>
         <div  className="text-center">
-            <Link to="/manageInventory" className="btn my-4 manage-btn">Manage Inventory</Link>
+            <Link to="/manageInventory" className="btn my-4 btn-def">Manage Inventory</Link>
         </div>
         </div>
     );

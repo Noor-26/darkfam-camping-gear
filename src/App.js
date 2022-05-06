@@ -16,6 +16,7 @@ import AOS from "aos";
 import { useEffect } from 'react'
 import "aos/dist/aos.css";
 import Footer from './components/Shared/Footer/Footer';
+import Notfound from './components/Notfound/Notfound';
 
 function App() {
   useEffect(() => {
@@ -46,6 +47,7 @@ function App() {
          <Myitems/>
        </RequireAuth>
      }/>
+     <Route path="*" element={<Notfound/>}/>
    </Routes>
    <Footer/>
    <ToastContainer/>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Item = ({item}) => {
-    const {name,img,description,price,supplierName,_id}= item
+    const {name,img,description,price,quantity,supplierName,_id}= item
    
     return (
         <div className="col">
@@ -12,6 +12,7 @@ const Item = ({item}) => {
             <h5 className="card-title">{name}</h5>
            
             <p className="card-text">price : ${price}</p>
+            <p className="card-text">Quantity : {quantity}</p>
             <p className="card-text">supplierName : {supplierName}</p>
             <p className="card-text">{description.slice(0,150)}...</p>
           </div>
