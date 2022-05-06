@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {  useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase'
-import axios from 'axios'
-
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Form.css'
 import Loading from '../../Loading/Loading';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+const axios = require('axios').default;
+
 const Login = () => {
       const emailRef = useRef()
       const passwordRef = useRef()
@@ -25,15 +25,14 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
       const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
       
-
       const  handleSubmit = async event =>{
         await  event.preventDefault()
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
-       fetch(' https://hidden-eyrie-13995.herokuapp.com/login').then(res => res.json())
-       .then(data =>  console.log(data))
-      
+        const {data} = await axios.post('http://localhost:5000/login',{email});
+        localStorage.setItem("accessToken",data)
+
     }
 
     const resetPassword = async () => {
