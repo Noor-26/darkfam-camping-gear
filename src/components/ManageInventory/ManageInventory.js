@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Showitems from './Showitems/Showitems';
 import { Link } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const ManageInventory = () => {
     const [Items, setItems] = useState([])
@@ -29,15 +30,18 @@ const ManageInventory = () => {
                 })
         }
     }
+    if(Items.length === 0 ){
+        return <Loading/>;
+    }
     return (
         <div>
-            <h2 className="mt-5 pt-3 ">Manage Inventory</h2>
+            <h2 className="mt-5 py-3 px-5 ">Manage Inventory</h2>
             <table className="table container">
                 <thead>
                 <tr>
       <th scope="col">Name</th>
-      <th scope="col">price</th>
-      <th scope="col">quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
       <th scope="col">supplierName</th>
     </tr>
                 </thead>

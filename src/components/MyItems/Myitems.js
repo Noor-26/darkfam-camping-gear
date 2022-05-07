@@ -1,26 +1,39 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState} from 'react-firebase-hooks/auth';
 import auth from '../../firebase';
 import Loading from '../Loading/Loading';
 import Myitem from './Myitem/Myitem';
+import { useNavigate } from 'react-router-dom';
+const axios = require('axios').default;
 
-const Myitems = ({ children }) => {
+const Myitems = () => {
     const [user,loading] = useAuthState(auth)
     const [items, setitems] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
     const email = user?.email
-    const  run = async  () => {
-        const url = `https://hidden-eyrie-13995.herokuapp.com/products?email=${email}`
+    const  getMyItems = async  () => {
+        const url = `http://localhost:5000/product?email=${email}`
         try{
-           fetch(url).then(res=>res.json()).then(data => setitems(data))
+            const  {data} = await axios.get(url,{
+                headers:{
+                    authorization : `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            setitems(data)
         }
         catch(error){
             console.log("the error is" , error.message);
+            if(error.response.status === 401 || error.response.status === 403){
+                signOut(auth)
+                navigate('/login')
+            }
+        }
     }
+    getMyItems()
 
-}
-run()
 }, [user])
 
 
@@ -53,7 +66,7 @@ run()
             <h2 className="mt-5 pt-4 text-center">My items</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-3">
                    {
-                       items.map(item =><Myitem key={item._id} item={item} deleteUser={deleteUser}/>)
+                       items?.map(item =><Myitem key={item._id} item={item} deleteUser={deleteUser}/>)
                    }
                    </div> 
         </div>

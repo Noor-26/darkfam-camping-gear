@@ -8,7 +8,7 @@ const Catagory = () => {
     return (
         <div className="my-5">
             <h2 className="px-5">Top catagory</h2>
-            <div  className=" catagory-container container  mt-3">
+            <div  className=" catagory-container container  mt-3" data-aos="fade-down"  data-aos-duration="4000">
 
             <div>
 
