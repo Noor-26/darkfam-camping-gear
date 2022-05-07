@@ -19,8 +19,7 @@ const Items = () => {
         <div className="mt-5 h-100">
             <h2 className="ms-5" id="inventory">New inventory items</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4 container mx-auto mt-3"
-             data-aos="fade-up"
-               data-aos-duration="4000">
+             >
             {
                 items.map(item => <Item key={item._id} item={item}/>)
             }

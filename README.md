@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Darkfam Camping gear
+Visit my site by clicking [Darkfam-camping-gear](https://darkfam-camping-gear.web.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Its an warehouse management website of camping gears. The main purpose of this website is storing items and delivering them. Below there are the features and functionality i have added to the website
 
-## Available Scripts
+* In the navber you will see only three options to navigate but if you login , more options will appear on the navber
 
-In the project directory, you can run:
+* After the new inventory section there is a manage button that will take you to manage inventory page. you have to be a user for entering in the website .
 
-### `npm start`
+* In the new inventory section there are shown products and its details such as there name,image,quantity,supplier name,price,and a description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* There is a button in the products in new inventory section products named update. By clicking it you will be taken to the update stock page, where you will be able to increase or decrease a products quantity.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* After the new inventory section you will see our services.
 
-### `npm test`
+* In the footer section you there are three icons of facebook , instagram and github. By clicking then you will be taken to my social pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* I have used email-password and google and github based authentication in my website. and you will be given a jwt token if you login in my site. Without login you won't be able to visit my items page.
 
-### `npm run build`
+* There is manage inventory page where all the products are shown. You can also delete the items by clicking the delete button in each table . 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* There is a add items page where user will be able to add new items in the warehouse. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Error massages are shown by custom toast.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The site is fully resposive.
 
-### `npm run eject`
+* In my items page user will see only his/her items.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* All the data is fetched by mongobd database.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* After registering an varification massage will be sent in the user email
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* useRef method is used for getting email and passwords input vaue 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* AOS animation is used in the website.
 
-## Learn More
+* Axios is used in my website. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* There is a reset password option in the login page in case you forget your password.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Below are the Technelogics and framworks used in my website 
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Boostrap
+* React router hooks
+* React firebase hooks
+* Firebase 
+* React toastify
+* Dotenv
+* NodeJs
+* ExpressJs
+* Mongodb

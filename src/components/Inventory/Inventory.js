@@ -87,7 +87,7 @@ const Inventory = () => {
            
             <p className="card-text mt-2">Price : ${price}</p>
             <p className="card-text mt-2">Quantity : {productQuantity }</p>
-
+            <p className="card-text mt-2">Sold : 120</p>
             <p className="card-text">SupplierName : {supplierName}</p>
             <p className="card-text">Description : {description}</p>
             <div className=" text-center">

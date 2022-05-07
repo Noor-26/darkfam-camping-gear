@@ -3,7 +3,8 @@ import axios from 'axios';
 const Blogs = () => {
     
     return (
-        <div className="mt-5 pt-3"  data-aos="fade-up">
+        <div className="mt-5 pt-3"  data-aos="fade-up"
+        data-aos-duration="3500">
             <h1 className="text-center pt-3">Blogs</h1>
             <div className="row row-cols-1 row-cols-md-2 g-4 container mx-auto mt-3 text-center">
                 <article className="card py-5 ">

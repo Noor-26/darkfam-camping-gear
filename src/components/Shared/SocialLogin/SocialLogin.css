@@ -13,6 +13,10 @@
     background-color: black;
     color: white;
 }
+.btn-github:hover{
+    color:white;
+}
+
 .buttons{
     display: flex;
     flex-direction: column;

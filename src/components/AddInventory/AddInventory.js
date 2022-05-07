@@ -63,7 +63,7 @@ const AddInventory = () => {
 
                 <label htmlFor="description">Description</label>
                 <textarea  type="text" name="description" id="description" className="mb-2" required/>
-                <div className="text-center mt-3">
+                <div className="text-center mt-3 mb-2">
 
                 <button type="submit" className="btn add-btn px-4 ">Add </button>
                 </div>

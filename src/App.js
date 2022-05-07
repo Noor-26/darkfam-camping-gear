@@ -28,10 +28,15 @@ function App() {
    <Routes>
      <Route path='/' element={<Home/>}/>
      <Route path='/home' element={<Home/>}/>
-     <Route path='/inventory/:id' element={<Inventory/>}/>
      <Route path='/login' element={<Login/>}/>
      <Route path='/register' element={<Ragister/>}/>
      <Route path='/blog' element={<Blogs/>}/>
+     <Route path='/inventory/:id' element={
+     <RequireAuth> 
+     <Inventory/>
+     </RequireAuth>
+
+     }/>
      <Route path='/manageInventory' element={
      <RequireAuth> 
        <ManageInventory/>
