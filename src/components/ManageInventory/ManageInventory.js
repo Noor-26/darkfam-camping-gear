@@ -7,7 +7,7 @@ const ManageInventory = () => {
     const [Items, setItems] = useState([])
 
     useEffect(() => {
-        fetch(`https://hidden-eyrie-13995.herokuapp.com/product`)
+        fetch(`https://floating-inlet-45730.herokuapp.com/product`)
       .then(res => res.json())
       .then(data => setItems(data))
     },[])
@@ -17,7 +17,7 @@ const ManageInventory = () => {
 
         if(deleteIt){ 
 
-        const url = `https://hidden-eyrie-13995.herokuapp.com/product/${id}`
+        const url = `https://floating-inlet-45730.herokuapp.com/product/${id}`
                 fetch(url,{
                     method:'DELETE'
                 })

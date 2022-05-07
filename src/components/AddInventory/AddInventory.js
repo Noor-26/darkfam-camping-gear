@@ -23,7 +23,7 @@ const AddInventory = () => {
           
         const item = {name,email,price,description,img,quantity,supplierName} 
         
-        fetch('https://hidden-eyrie-13995.herokuapp.com/product',{
+        fetch('https://floating-inlet-45730.herokuapp.com/product',{
         method:"POST",
         headers:{
             'content-type' : 'application/json'

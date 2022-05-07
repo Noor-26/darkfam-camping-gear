@@ -5,6 +5,8 @@ import auth from '../../firebase';
 import Loading from '../Loading/Loading';
 import Myitem from './Myitem/Myitem';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 const axios = require('axios').default;
 
 const Myitems = () => {
@@ -15,14 +17,22 @@ const Myitems = () => {
     useEffect(() => {
     const email = user?.email
     const  getMyItems = async  () => {
-        const url = `http://localhost:5000/product?email=${email}`
+        const url = `https://floating-inlet-45730.herokuapp.com/products?email=${email}`
         try{
-            const  {data} = await axios.get(url,{
+            const  {data} = await axios.get(url, {
                 headers:{
                     authorization : `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-            setitems(data)
+           { setitems(data)
+            if(data.length ===0){
+                toast.info('add items',{
+                    style: {backgroundColor:"black",color:"white"}
+                })
+
+            }
+        }
+            
         }
         catch(error){
             console.log("the error is" , error.message);
@@ -37,7 +47,7 @@ const Myitems = () => {
 }, [user])
 
 
-    if(loading || !items){
+    if(loading ){
         return <Loading/>
     }
 
@@ -47,7 +57,7 @@ const Myitems = () => {
 
         if(deleteIt){ 
 
-            const url = `https://hidden-eyrie-13995.herokuapp.com/product/${id}` 
+            const url = `https://floating-inlet-45730.herokuapp.com/product/${id}` 
                     fetch(url,{
                         method:'DELETE'
                     })
@@ -60,6 +70,9 @@ const Myitems = () => {
                     })
         }
             
+    }
+    if(items.length === 0 ){
+        return <Loading/>;
     }
     return (
         <div>
