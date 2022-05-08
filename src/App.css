@@ -5,6 +5,14 @@
   overflow: hidden;
 }
 
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: crimson;
+  border-radius: 12px;
+}
+
 *{
   font-family: 'Poppins', sans-serif;
 }

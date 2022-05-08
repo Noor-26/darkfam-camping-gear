@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Showitems from './Showitems/Showitems';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
-
+import './ManageInventory.css'
 const ManageInventory = () => {
     const [Items, setItems] = useState([])
 
@@ -34,9 +34,9 @@ const ManageInventory = () => {
         return <Loading/>;
     }
     return (
-        <div>
+        <div className="table-container">
             <h2 className="mt-5 py-3 px-5 ">Manage Inventory</h2>
-            <table className="table container">
+            <table className="table container ">
                 <thead>
                 <tr>
       <th scope="col">Name</th>
