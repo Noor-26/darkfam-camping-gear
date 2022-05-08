@@ -58,8 +58,6 @@ const Inventory = () => {
   
 }
       
-      
-    
     useEffect(() => {
       fetch(`https://floating-inlet-45730.herokuapp.com/inventory/${id}`)
       .then(res => res.json())
