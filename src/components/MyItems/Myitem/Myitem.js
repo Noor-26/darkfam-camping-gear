@@ -4,7 +4,8 @@ const Myitem = ({item,deleteUser}) => {
     const {name,img,description,price,supplierName,_id}= item
 
     return (
-        <div className="col">
+        <div className="col"
+        data-aos="zoom-in-down"  data-aos-duration="3500">
         <div className="card h-100">
           <img src={img} className="card-img-top card-img " alt="Product"/>
           <div className="card-body">
