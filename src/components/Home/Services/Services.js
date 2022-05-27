@@ -8,7 +8,7 @@ const Services = () => {
    
     return (
         <div className="mt-5">
-          <h2 className="text-center" >Our service</h2>
+          <h2 className="text-center" >Our services</h2>
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 container mx-auto mt-3"  data-aos="zoom-out-up" data-aos-duration="4000">
 
             <div className="col">

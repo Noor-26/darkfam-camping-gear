@@ -10,7 +10,7 @@ const Banner = () => {
             </div>
             <div className="text-container text-white ">
             
-                <h1 className="banner-text text-center " >Equip all your Camping items here</h1>
+                <h1 className="banner-text text-center " >Equip all your Camping items here </h1>
               <a href='#inventory'><button className="btn btn-def px-3 py-2 px-md-5 py-md-3">See items</button></a>
                
             </div>
