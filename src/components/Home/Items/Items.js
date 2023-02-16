@@ -6,7 +6,7 @@ const Items = () => {
     const [items, setitems] = useState([])
     useEffect(() => {
       
-        fetch("https://floating-inlet-45730.herokuapp.com/product/home") 
+        fetch("https://darkfam-camping-gear-server.onrender.com/product/home") 
         .then(res => res.json())
         .then(data => setitems(data))
         

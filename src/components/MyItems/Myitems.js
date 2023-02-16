@@ -17,7 +17,7 @@ const Myitems = () => {
     useEffect(() => {
     const email = user?.email
     const  getMyItems = async  () => {
-        const url = `https://floating-inlet-45730.herokuapp.com/products?email=${email}`
+        const url = `https://darkfam-camping-gear-server.onrender.com/products?email=${email}`
         try{
             const  {data} = await axios.get(url, {
                 headers:{
@@ -57,7 +57,7 @@ const Myitems = () => {
 
         if(deleteIt){ 
 
-            const url = `https://floating-inlet-45730.herokuapp.com/product/${id}` 
+            const url = `https://darkfam-camping-gear-server.onrender.com/product/${id}` 
                     fetch(url,{
                         method:'DELETE'
                     })

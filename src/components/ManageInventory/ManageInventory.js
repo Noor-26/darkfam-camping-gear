@@ -7,7 +7,7 @@ const ManageInventory = () => {
     const [Items, setItems] = useState([])
 
     useEffect(() => {
-        fetch(`https://floating-inlet-45730.herokuapp.com/product`)
+        fetch(`https://darkfam-camping-gear-server.onrender.com/product`)
       .then(res => res.json())
       .then(data => setItems(data))
     },[])
@@ -17,7 +17,7 @@ const ManageInventory = () => {
 
         if(deleteIt){ 
 
-        const url = `https://floating-inlet-45730.herokuapp.com/product/${id}`
+        const url = `https://darkfam-camping-gear-server.onrender.com/product/${id}`
                 fetch(url,{
                     method:'DELETE'
                 })

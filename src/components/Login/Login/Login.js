@@ -30,7 +30,7 @@ const Login = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         signInWithEmailAndPassword(email, password)
-        const {data} = await axios.post('https://floating-inlet-45730.herokuapp.com/login',{email});
+        const {data} = await axios.post('https://darkfam-camping-gear-server.onrender.com/login',{email});
         localStorage.setItem("accessToken",data)
 
     }

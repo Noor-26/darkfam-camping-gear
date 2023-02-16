@@ -12,7 +12,7 @@ const Inventory = () => {
           
           // update quantity
     
-          fetch(`https://floating-inlet-45730.herokuapp.com/inventory/${id}`,{
+          fetch(`https://darkfam-camping-gear-server.onrender.com/inventory/${id}`,{
             method:"PUT",
             headers:{
                 'content-type' : 'application/json',
@@ -39,7 +39,7 @@ const Inventory = () => {
           
           // update quantity
     
-          fetch(`https://floating-inlet-45730.herokuapp.com/inventory/${id}`,{
+          fetch(`https://darkfam-camping-gear-server.onrender.com/inventory/${id}`,{
             method:"PUT",
             headers:{
                 'content-type' : 'application/json',
@@ -59,7 +59,7 @@ const Inventory = () => {
 }
       
     useEffect(() => {
-      fetch(`https://floating-inlet-45730.herokuapp.com/inventory/${id}`)
+      fetch(`https://darkfam-camping-gear-server.onrender.com/inventory/${id}`)
       .then(res => res.json())
       .then(data => {
           setQuantity(data.quantity )

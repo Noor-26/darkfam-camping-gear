@@ -23,7 +23,7 @@ const AddInventory = () => {
           
         const item = {name,email,price,description,img,quantity,supplierName} 
         
-        fetch('https://floating-inlet-45730.herokuapp.com/product',{
+        fetch('https://darkfam-camping-gear-server.onrender.com/product',{
         method:"POST",
         headers:{
             'content-type' : 'application/json'
